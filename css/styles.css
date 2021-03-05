@@ -95,10 +95,6 @@ p {
   min-height: 294px;
 }
 
-.image-one {
-  position: relative;
-}
-
 .works-overlay {
   position: absolute;
   display: flex;
@@ -863,9 +859,12 @@ p {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
 
-  min-width: 528px;
-  min-height: 581px;
+  max-width: 528px;
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
   border-radius: 4px;
+  padding: 30px;
 
   background-color: rgba(255, 255, 255, 1);
 }
