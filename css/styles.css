@@ -57,7 +57,7 @@ p {
 .header {
   margin-left: auto;
   margin-right: auto;
-  padding: 24px 15px 25px;
+  padding: 24px 15px;
   border-bottom: 1px solid #ececec;
 
   /* outline: 2px solid #ff5e00; */
@@ -107,7 +107,6 @@ p {
 }
 
 .text-overlay {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -146,9 +145,11 @@ p {
 
 .clients-link:hover,
 .clients-link:focus {
-  border: 1px solid var(--blue-text);
   fill: var(--blue-text);
+  border: 1px solid var(--blue-text);
   outline: none;
+
+  transition: fill 250ms var(--timing-function);
 }
 
 .clients-link {
@@ -182,7 +183,6 @@ p {
 .header,
 .main-info {
   background-color: var(--white-text);
-  font-family: Roboto, sans-serif;
 }
 
 .main-btn {
@@ -201,6 +201,8 @@ p {
 .main-btn:hover,
 .main-btn:focus {
   outline: 1px solid var(--blue-text);
+
+  transition: outline 250ms var(--timing-function);
 }
 
 .phone-number {
@@ -209,7 +211,6 @@ p {
 }
 
 .container-nav .phone-number {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -247,10 +248,7 @@ p {
 }
 
 .header-links {
-  font-family: Roboto, sans-serif;
-
   position: relative;
-
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -259,6 +257,25 @@ p {
   text-decoration: none;
   padding-bottom: 30px;
   color: var(--heading-color);
+}
+
+.header-links.current {
+  color: var(--blue-text);
+}
+
+.header-links.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+
+  width: 100%;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--blue-text);
+  border-radius: 2px;
+
+  transform: scaleX(1);
 }
 
 .header-links::after {
@@ -280,15 +297,20 @@ p {
 .header-links:hover::after,
 .header-links:focus::after {
   transform: scaleX(1);
+  transition: transform 250ms var(--timing-function);
 }
 
 .header-links:hover {
   color: var(--blue-text);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .header-links:focus {
   color: var(--blue-text);
   outline: 1px solid var(--blue-text);
+
+  transition: color 250ms var(--timing-function);
 }
 
 .nav-items .item {
@@ -328,7 +350,6 @@ p {
 }
 
 .main-title {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 44px;
@@ -350,14 +371,15 @@ p {
   align-items: center;
 }
 
-.link-item:hover {
-  color: var(--blue-text);
-  fill: var(--blue-text);
-}
-
+.link-item:hover,
 .link-item:focus {
   color: var(--blue-text);
   fill: var(--blue-text);
+
+  transition: color 250ms var(--timing-function);
+}
+
+.link-item:focus {
   outline: 1px solid var(--blue-text);
 }
 
@@ -365,10 +387,17 @@ p {
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 94px;
   padding-bottom: 94px;
 
   /* outline: 4px solid #008080; */
+}
+
+.main-info-one {
+  padding-top: 94px;
+}
+
+.main-info-two {
+  padding-top: 0;
 }
 
 .skill-items {
@@ -384,7 +413,6 @@ p {
 }
 
 .item > .text-color {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -409,7 +437,6 @@ p {
 }
 
 .command-image .third-headings {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -420,7 +447,6 @@ p {
 }
 
 .command-image .text-color {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -476,10 +502,13 @@ p {
 
 .social-links:hover,
 .social-links:focus {
-  border-radius: 50%;
   background-color: var(--blue-text);
   fill: white;
+  border-radius: 50%;
   outline: none;
+
+  transition: background-color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 
 .social-item:not(:last-child) {
@@ -496,7 +525,6 @@ p {
 }
 
 .item .third-headings {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -507,7 +535,6 @@ p {
 }
 
 .second-headings {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
@@ -522,7 +549,6 @@ p {
 }
 
 .address-footer {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -575,7 +601,6 @@ p {
 }
 
 .mailtel-footer {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -595,7 +620,6 @@ p {
 }
 
 .join {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -632,6 +656,8 @@ p {
 .footer-links:focus {
   background-color: var(--blue-text);
   outline: none;
+
+  transition: background-color 250ms var(--timing-function);
 }
 
 .footer-network:not(:last-child) {
@@ -653,7 +679,7 @@ p {
 }
 
 .portfolio-buttons {
-  font-family: Roboto, sans-serif;
+  display: inline-block;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -662,26 +688,24 @@ p {
   border-radius: 4px;
   border: none;
   color: rgba(33, 33, 33, 1);
-
-  /* outline: 4px solid #ff5e00; */
 }
 
 .portfolio-buttons:hover,
 .portfolio-buttons:focus {
-  background-color: var(--blue-text);
   color: var(--white-text);
-  outline: none;
+  background-color: var(--blue-text);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);
 
-  /* outline: 2px solid var(--blue-text); */
+  transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
+  outline: none;
 }
 
 .portfolio-buttons:active,
 .portfolio-buttons:visited {
-  background-color: var(--blue-text);
   color: var(--white-text);
-
-  /* outline: 2px solid var(--blue-text); */
+  background-color: var(--blue-text);
 }
 
 .section-buttons {
@@ -689,8 +713,6 @@ p {
   margin-right: auto;
   padding-top: 94px;
   padding-bottom: 94px;
-
-  /* outline: 4px solid #008080; */
 }
 
 .buttons {
@@ -729,13 +751,14 @@ p {
 .card-thumb {
   position: relative;
   overflow: hidden;
+  width: 370px;
+  height: 294px;
+}
+
+.card-content {
   border-right: 1px solid rgba(238, 238, 238, 1);
   border-bottom: 1px solid rgba(238, 238, 238, 1);
   border-left: 1px solid rgba(238, 238, 238, 1);
-}
-
-.portfolio-item {
-  /* outline: 4px solid red; */
 }
 
 .overlay {
@@ -745,36 +768,20 @@ p {
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
 
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 500ms var(--timing-function);
+  transition: transform 250ms var(--timing-function);
 }
 
-.overlay:hover {
-  opacity: 1;
-}
-
-.card-thumb:hover .overlay {
+.card-link:hover .overlay,
+.card-link:focus .overlay {
   transform: translateY(0);
-}
-
-.overlay-container {
-  position: absolute;
-  display: flex;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 322px;
-  min-height: 168px;
-}
-
-.card-thumb:hover .overlay-container {
   opacity: 1;
 }
 
 .overlay-content {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -790,12 +797,13 @@ p {
 .card {
   text-decoration: none;
   color: currentColor;
-  background-color: var(--white-text);
 }
 
 .portfolio-item:hover {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25),
     0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .command-image .card {
@@ -806,10 +814,11 @@ p {
 .command-image .card:hover {
   box-shadow: 0 4px 4px 0 #00000025, 0 4px 4px 0 #00000025,
     0 4px 4px 0 #00000025;
+
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .card-heading {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-size: 18px;
   line-height: 2;
@@ -817,7 +826,6 @@ p {
 }
 
 .card-text {
-  font-family: Roboto, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 1.87;
@@ -831,6 +839,7 @@ p {
 
 .card-content {
   padding: 20px 24px;
+  background-color: var(--white-text);
 }
 
 .backdrop {
@@ -864,7 +873,7 @@ p {
   max-height: 100vh;
   overflow-y: auto;
   border-radius: 4px;
-  padding: 30px;
+  padding: 40px;
 
   background-color: rgba(255, 255, 255, 1);
 }
